@@ -1,0 +1,477 @@
+[
+  {
+    "id": 1,
+    "name": "AirMax Pro Sneaker",
+    "category": "Sneakers",
+    "price": 120,
+    "rating": 4.5,
+    "description": "High-performance sneakers for everyday wear.",
+    "features": [
+      "Breathable mesh",
+      "Lightweight",
+      "Cushioned sole",
+      "Durable rubber outsole"
+    ],
+    "image": "/images/sneakers/shoe1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "RunnerX Lite",
+    "category": "Sneakers",
+    "price": 95,
+    "rating": 4.3,
+    "description": "Comfortable running sneakers with superior grip.",
+    "features": [
+      "Flexible sole",
+      "Moisture-wicking",
+      "Ergonomic fit",
+      "Reflective design"
+    ],
+    "image": "/images/sneakers/shoe2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Urban Street Sneaker",
+    "category": "Sneakers",
+    "price": 110,
+    "rating": 4.6,
+    "description": "Trendy sneakers suitable for city walks.",
+    "features": [
+      "Stylish design",
+      "Lightweight",
+      "Memory foam insole",
+      "Non-slip sole"
+    ],
+    "image": "/images/sneakers/shoe3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "SpeedFlex 2000",
+    "category": "Sneakers",
+    "price": 130,
+    "rating": 4.7,
+    "description": "Performance sneakers for active sports.",
+    "features": [
+      "High grip",
+      "Breathable upper",
+      "Shock absorption",
+      "Lightweight"
+    ],
+    "image": "/images/sneakers/shoe4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "NeoRunner Classic",
+    "category": "Sneakers",
+    "price": 100,
+    "rating": 4.2,
+    "description": "Classic running shoes for daily jogs.",
+    "features": [
+      "Breathable mesh",
+      "Cushioned heel",
+      "Durable outsole",
+      "Stylish colors"
+    ],
+    "image": "/images/sneakers/shoe5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "TrailBlazer Sneaker",
+    "category": "Sneakers",
+    "price": 140,
+    "rating": 4.8,
+    "description": "Sneakers for outdoor adventures.",
+    "features": [
+      "Water-resistant",
+      "Traction grip",
+      "Comfortable insole",
+      "Durable build"
+    ],
+    "image": "/images/sneakers/shoe6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "FlexStep Runner",
+    "category": "Sneakers",
+    "price": 115,
+    "rating": 4.4,
+    "description": "Lightweight sneakers for daily runs.",
+    "features": [
+      "Cushioned sole",
+      "Breathable upper",
+      "Durable",
+      "Ergonomic design"
+    ],
+    "image": "/images/sneakers/shoe7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Urban Glide",
+    "category": "Sneakers",
+    "price": 125,
+    "rating": 4.6,
+    "description": "Stylish urban sneakers for casual wear.",
+    "features": [
+      "Memory foam",
+      "Non-slip sole",
+      "Lightweight",
+      "Modern design"
+    ],
+    "image": "/images/sneakers/shoe8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "SpeedZone",
+    "category": "Sneakers",
+    "price": 135,
+    "rating": 4.7,
+    "description": "High-performance sneakers for fast runs.",
+    "features": [
+      "Shock absorption",
+      "Breathable mesh",
+      "Durable sole",
+      "Lightweight"
+    ],
+    "image": "/images/sneakers/shoe9.jpg"
+  },
+  {
+    "id": 10,
+    "name": "AirSport Pro",
+    "category": "Sneakers",
+    "price": 145,
+    "rating": 4.8,
+    "description": "Premium sneakers for sport and casual use.",
+    "features": [
+      "Cushioned sole",
+      "Breathable upper",
+      "Ergonomic fit",
+      "Stylish look"
+    ],
+    "image": "/images/sneakers/shoe10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "SkyRunner",
+    "category": "Sneakers",
+    "price": 120,
+    "rating": 4.5,
+    "description": "Comfortable sneakers with modern design.",
+    "features": [
+      "Lightweight",
+      "Cushioned sole",
+      "Durable",
+      "Breathable upper"
+    ],
+    "image": "/images/sneakers/shoe11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "TrailMax",
+    "category": "Sneakers",
+    "price": 140,
+    "rating": 4.7,
+    "description": "Trail sneakers for hiking and outdoor activities.",
+    "features": ["Waterproof", "Grip sole", "Shock absorption", "Lightweight"],
+    "image": "/images/sneakers/shoe12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "PowerStride",
+    "category": "Sneakers",
+    "price": 130,
+    "rating": 4.6,
+    "description": "Sneakers designed for maximum performance.",
+    "features": ["Cushioned sole", "Ergonomic fit", "Lightweight", "Durable"],
+    "image": "/images/sneakers/shoe13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "AirFlow Runner",
+    "category": "Sneakers",
+    "price": 115,
+    "rating": 4.4,
+    "description": "Breathable sneakers for everyday runs.",
+    "features": ["Airflow mesh", "Lightweight", "Comfortable", "Non-slip sole"],
+    "image": "/images/sneakers/shoe14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Urban Trek",
+    "category": "Sneakers",
+    "price": 125,
+    "rating": 4.5,
+    "description": "Sneakers suitable for city exploration.",
+    "features": [
+      "Stylish design",
+      "Memory foam",
+      "Lightweight",
+      "Durable sole"
+    ],
+    "image": "/images/sneakers/shoe15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "SpeedAce",
+    "category": "Sneakers",
+    "price": 135,
+    "rating": 4.7,
+    "description": "High-speed running sneakers for athletes.",
+    "features": [
+      "Lightweight",
+      "Cushioned sole",
+      "Grip outsole",
+      "Breathable upper"
+    ],
+    "image": "/images/sneakers/shoe16.jpg"
+  },
+  {
+    "id": 17,
+    "name": "NeoSprint",
+    "category": "Sneakers",
+    "price": 120,
+    "rating": 4.6,
+    "description": "Modern design with comfortable fit.",
+    "features": [
+      "Ergonomic fit",
+      "Lightweight",
+      "Breathable mesh",
+      "Durable sole"
+    ],
+    "image": "/images/sneakers/shoe17.jpg"
+  },
+  {
+    "id": 18,
+    "name": "FlexRun Elite",
+    "category": "Sneakers",
+    "price": 140,
+    "rating": 4.8,
+    "description": "Premium running sneakers for everyday use.",
+    "features": [
+      "Shock absorption",
+      "Cushioned sole",
+      "Lightweight",
+      "Durable outsole"
+    ],
+    "image": "/images/sneakers/shoe18.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Urban Glide Pro",
+    "category": "Sneakers",
+    "price": 130,
+    "rating": 4.6,
+    "description": "Casual sneakers with stylish design.",
+    "features": ["Stylish look", "Lightweight", "Comfortable", "Durable sole"],
+    "image": "/images/sneakers/shoe19.jpg"
+  },
+  {
+    "id": 20,
+    "name": "TrailRunner XT",
+    "category": "Sneakers",
+    "price": 145,
+    "rating": 4.9,
+    "description": "Trail sneakers for outdoor adventure.",
+    "features": ["Waterproof", "Shock absorption", "Grip sole", "Lightweight"],
+    "image": "/images/sneakers/shoe20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "AirSprint Classic",
+    "category": "Sneakers",
+    "price": 125,
+    "rating": 4.5,
+    "description": "Classic sneakers for everyday wear.",
+    "features": [
+      "Cushioned sole",
+      "Durable",
+      "Breathable upper",
+      "Stylish design"
+    ],
+    "image": "/images/sneakers/shoe21.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Elegant Leather Handbag",
+    "category": "Female Hand Bags",
+    "price": 80,
+    "rating": 4.6,
+    "description": "Premium leather handbag for daily use.",
+    "features": [
+      "Genuine leather",
+      "Spacious",
+      "Adjustable strap",
+      "Durable stitching"
+    ],
+    "image": "/images/bags/bag1.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Chic Tote Bag",
+    "category": "Female Hand Bags",
+    "price": 70,
+    "rating": 4.4,
+    "description": "Stylish tote bag for work and travel.",
+    "features": [
+      "Lightweight",
+      "Durable",
+      "Multiple compartments",
+      "Comfortable strap"
+    ],
+    "image": "/images/bags/bag2.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Classic Satchel",
+    "category": "Female Hand Bags",
+    "price": 85,
+    "rating": 4.7,
+    "description": "Elegant satchel bag for casual and formal use.",
+    "features": ["Premium leather", "Spacious", "Durable", "Stylish design"],
+    "image": "/images/bags/bag3.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Modern Crossbody Bag",
+    "category": "Female Hand Bags",
+    "price": 65,
+    "rating": 4.5,
+    "description": "Compact crossbody bag for daily essentials.",
+    "features": [
+      "Lightweight",
+      "Durable",
+      "Adjustable strap",
+      "Stylish design"
+    ],
+    "image": "/images/bags/bag4.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Luxury Shoulder Bag",
+    "category": "Female Hand Bags",
+    "price": 95,
+    "rating": 4.8,
+    "description": "Premium shoulder bag with elegant design.",
+    "features": [
+      "Spacious",
+      "High-quality leather",
+      "Durable",
+      "Adjustable strap"
+    ],
+    "image": "/images/bags/bag5.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Fashionable Clutch",
+    "category": "Female Hand Bags",
+    "price": 55,
+    "rating": 4.3,
+    "description": "Small and stylish clutch for parties.",
+    "features": ["Compact", "Stylish design", "Durable", "Premium finish"],
+    "image": "/images/bags/bag6.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Mountain Trek Boot",
+    "category": "Boots",
+    "price": 150,
+    "rating": 4.7,
+    "description": "Durable boots for outdoor trekking.",
+    "features": [
+      "Waterproof",
+      "Anti-slip sole",
+      "Cushioned interior",
+      "Sturdy design"
+    ],
+    "image": "/images/boots/boots1.jpg"
+  },
+  {
+    "id": 29,
+    "name": "HikerPro Boot",
+    "category": "Boots",
+    "price": 160,
+    "rating": 4.8,
+    "description": "High-performance boots for rough terrains.",
+    "features": [
+      "Shock absorption",
+      "Waterproof",
+      "Durable sole",
+      "Comfortable fit"
+    ],
+    "image": "/images/boots/boots2.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Urban Explorer Boot",
+    "category": "Boots",
+    "price": 140,
+    "rating": 4.6,
+    "description": "Stylish boots for urban adventures.",
+    "features": ["Stylish", "Durable", "Comfortable", "Anti-slip sole"],
+    "image": "/images/boots/boots3.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Classic Leather Boot",
+    "category": "Boots",
+    "price": 155,
+    "rating": 4.7,
+    "description": "Premium leather boots for formal and casual wear.",
+    "features": [
+      "High-quality leather",
+      "Durable sole",
+      "Comfortable",
+      "Elegant design"
+    ],
+    "image": "/images/boots/boots4.jpg"
+  },
+  {
+    "id": 32,
+    "name": "SteelPro Body Water Bottle",
+    "category": "Steel Body Water Bottle",
+    "price": 25,
+    "rating": 4.5,
+    "description": "Durable stainless steel water bottle for everyday use.",
+    "features": ["Leak-proof", "Rust-resistant", "Lightweight", "Insulated"],
+    "image": "/images/bottles/bottle1.jpg"
+  },
+  {
+    "id": 33,
+    "name": "HydroMax Bottle",
+    "category": "Steel Body Water Bottle",
+    "price": 30,
+    "rating": 4.6,
+    "description": "Stainless steel bottle with temperature retention.",
+    "features": ["Keeps drinks cold/hot", "Durable", "Leak-proof", "Portable"],
+    "image": "/images/bottles/bottle2.jpg"
+  },
+  {
+    "id": 34,
+    "name": "EcoSteel Bottle",
+    "category": "Steel Body Water Bottle",
+    "price": 28,
+    "rating": 4.5,
+    "description": "Eco-friendly stainless steel bottle for daily hydration.",
+    "features": ["Reusable", "Leak-proof", "Lightweight", "Rust-resistant"],
+    "image": "/images/bottles/bottle3.jpg"
+  },
+  {
+    "id": 35,
+    "name": "TravelMate Bottle",
+    "category": "Steel Body Water Bottle",
+    "price": 32,
+    "rating": 4.7,
+    "description": "Durable bottle perfect for travel and sports.",
+    "features": ["Insulated", "Leak-proof", "Stainless steel", "Lightweight"],
+    "image": "/images/bottles/bottle4.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Comfy Cotton Sock",
+    "category": "Socks",
+    "price": 5,
+    "rating": 4.4,
+    "description": "Soft and comfortable cotton socks.",
+    "features": ["Breathable", "Soft cotton", "Elastic cuff", "Durable"],
+    "image": "/images/socks/sockes1.jpg"
+  }
+]

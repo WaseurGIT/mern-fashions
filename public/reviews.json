@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "personImage": "https://i.pravatar.cc/150?img=12",
+    "name": "Amina Rahman",
+    "review": "Great bottle — keeps my water cold all day and is totally leak-proof. Comfortable to hold and very durable.",
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "personImage": "https://i.pravatar.cc/150?img=5",
+    "name": "Rafiq Hossain",
+    "review": "Good value for money. The build quality is solid, though the lid can be a bit stiff at first.",
+    "rating": 4.3
+  },
+  {
+    "id": 3,
+    "personImage": "https://i.pravatar.cc/150?img=25",
+    "name": "Sadia Akter",
+    "review": "Lovely design and very light. I use it for gym sessions and it fits well in my bag. Highly recommended.",
+    "rating": 4.6
+  },
+  {
+    "id": 4,
+    "personImage": "https://i.pravatar.cc/150?img=18",
+    "name": "Imran Khan",
+    "review": "Does the job. Keeps hot drinks hot for hours. Only wish it came in more colors.",
+    "rating": 4.2
+  },
+  {
+    "id": 5,
+    "personImage": "https://i.pravatar.cc/150?img=32",
+    "name": "Nusrat Jahan",
+    "review": "Excellent customer service and fast delivery. The bottle looks premium and is easy to clean.",
+    "rating": 4.9
+  },
+  {
+    "id": 6,
+    "personImage": "https://i.pravatar.cc/150?img=46",
+    "name": "Tariq Aziz",
+    "review": "Sturdy and reliable. I carry it on hikes and it hasn't let me down yet. A little heavy when full though.",
+    "rating": 4.4
+  }
+]

@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import "./Navbar.css";
+import { AuthContext } from "../../context/AuthProvider";
+import { FaRegCircleUser } from "react-icons/fa6";
+import { MdLogout } from "react-icons/md";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+    logOut()
+  }
+
   const links = (
     <>
       <li className="transition-all duration-700 ease-in-out hover:scale-110">
@@ -67,9 +76,16 @@ const NavBar = () => {
         <NavLink to="/cart" className="btn rounded-full">
           <BsCart2 />
         </NavLink>
-        <NavLink to="/wish" className="btn rounded-full">
+        {/* <NavLink to="/wish" className="btn rounded-full">
           <FaRegHeart />
-        </NavLink>
+        </NavLink> */}
+      </div>
+      <div>
+        {user && (
+          <div className="flex items-center justify-evenly gap-2">
+            <FaRegCircleUser className="text-2xl mx-2 text-green-500" /> <MdLogout onClick={handleLogOut} className="text-2xl text-red-500"/>
+          </div>
+        )}
       </div>
     </div>
   );
