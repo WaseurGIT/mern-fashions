@@ -27,14 +27,14 @@ const Reviews = () => {
             <div className="max-w-xl flex flex-col items-center p-8 bg-white rounded-2xl shadow-lg text-center mx-4">
               {/* Reviewer Image */}
               <img
-                src={review.reviewer_image}
-                alt={review.reviewer_name}
+                src={review.personImage}
+                alt={review.name}
                 className="w-20 h-20 rounded-full border-4 border-purple-500 mb-4 object-cover"
               />
 
               {/* Reviewer Info */}
               <h3 className="text-lg font-semibold text-gray-800">
-                {review.reviewer_name}
+                {review.name}
               </h3>
 
               {/* Rating */}
