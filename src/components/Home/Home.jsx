@@ -8,12 +8,27 @@ import Reviews from "../Reviews/Reviews";
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
-            <Bottles></Bottles>
-            <Bags></Bags>
-            <Shoes></Shoes>
-            <Boots></Boots>
-            <Reviews></Reviews>
+            <Banner />
+
+            <section id="bottles">
+                <Bottles />
+            </section>
+
+            <section id="bags">
+                <Bags />
+            </section>
+
+            <section id="shoes">
+                <Shoes />
+            </section>
+
+            <section id="boots">
+                <Boots />
+            </section>
+
+            <section id="reviews">
+                <Reviews />
+            </section>
         </div>
     );
 };

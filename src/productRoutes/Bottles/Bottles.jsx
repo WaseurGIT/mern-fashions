@@ -19,7 +19,7 @@ const Bottles = () => {
   return (
     <div>
       <SectionHeader title="Bottles"></SectionHeader>
-      <div className="grid grid-cols-4 gap-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {bottles.map((bottle) => (
           <Bottle key={bottle.id} bottle={bottle}></Bottle>
         ))}

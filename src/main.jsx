@@ -8,6 +8,9 @@ import Home from "./components/Home/Home.jsx";
 import Login from "./auth/Login/Login.jsx";
 import Register from "./auth/Register/Register.jsx";
 import AuthProvider from "./context/AuthProvider.jsx";
+import BottleDetails from "./productRoutes/Bottles/BottleDetails.jsx";
+import ShoeDetails from "./productRoutes/Shoes/ShoeDetails.jsx";
+import BagDetails from "./productRoutes/Bags/BagDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,46 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/bottleDetails/:id",
+        element: <BottleDetails />,
+        loader: async ({ params }) => {
+          const res = await fetch("/products.json");
+          const data = await res.json();
+          const bottle = data.find((item) => item.id === parseInt(params.id));
+          return bottle;
+        },
+      },
+      {
+        path: "/shoeDetails/:id",
+        element: <ShoeDetails></ShoeDetails>,
+        loader: async ({ params }) => {
+          const res = await fetch("/products.json");
+          const data = await res.json();
+          const shoe = data.find((item) => item.id === parseInt(params.id));
+          return shoe;
+        },
+      },
+      {
+        path: "/bagDetails/:id",
+        element: <BagDetails></BagDetails>,
+        loader: async ({ params }) => {
+          const res = await fetch("/products.json");
+          const data = await res.json();
+          const bag = data.find((item) => item.id === parseInt(params.id));
+          return bag;
+        },
+      },
+      {
+        path: "/bootDetails/:id",
+        element: <BottleDetails></BottleDetails>,
+        loader: async ({ params }) => {
+          const res = await fetch("/products.json");
+          const data = await res.json();
+          const boot = data.find((item) => item.id === parseInt(params.id));
+          return boot;
+        },
       },
     ],
   },
