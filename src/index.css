@@ -4,3 +4,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+html.light {
+  background: white;
+  color: black;
+}
+
+html.dark {
+  background: #121212;
+  color: white;
+}

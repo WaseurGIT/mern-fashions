@@ -1,8 +1,20 @@
+import { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartProvider";
+import { AuthContext } from "../../context/AuthProvider";
 
 const BagDetails = () => {
+  const { addToCart } = useContext(CartContext);
+  const { user } = useContext(AuthContext);
+
+  const [disable, setDisable] = useState(false);
+
   const bag = useLoaderData();
   const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    addToCart(bag);
+  };
 
   const handleGoBack = () => {
     navigate(-1);
@@ -52,7 +64,11 @@ const BagDetails = () => {
           >
             Back
           </button>
-          <button className="btn px-6 py-3 rounded-full bg-green-500 text-white font-semibold shadow-md hover:bg-green-600 transition-all duration-700 ease-in-out hover:scale-110">
+          <button
+            onClick={handleAddToCart}
+            disabled={!user || disable}
+            className="btn px-6 py-3 rounded-full bg-green-500 text-white font-semibold shadow-md hover:bg-green-600 transition-all duration-700 ease-in-out hover:scale-110"
+          >
             Add to Cart
           </button>
         </div>

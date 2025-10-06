@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
+import NavBar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer"
 
 const Root = () => {
     return (
-        <div className="max-w-[1520px] mx-auto bg-white">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <div className="bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen transition-colors duration-300">
+            <div className="max-w-[1520px] mx-auto">
+                <NavBar />
+                <Outlet />
+                <Footer />
+            </div>
         </div>
     );
 };
 
-export default Root;
+
+export default Root

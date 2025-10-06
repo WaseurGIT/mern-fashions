@@ -1,6 +1,13 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartProvider";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthProvider";
 
 const BootDetails = () => {
+  const { user } = useContext(AuthContext);
+  const { addToCart } = useContext(CartContext);
+
+  const [disable, setDisable] = useState(false);
   const boot = useLoaderData();
   const navigate = useNavigate();
 
@@ -11,6 +18,10 @@ const BootDetails = () => {
   if (!boot) {
     return <p className="text-center text-gray-500 mt-10">Boot not found</p>;
   }
+
+  const handleAddToCart = () => {
+    addToCart(boot);
+  };
 
   const { name, image, price, rating, features, description } = boot;
 
@@ -52,7 +63,11 @@ const BootDetails = () => {
           >
             Back
           </button>
-          <button className="btn px-6 py-3 rounded-full bg-green-500 text-white font-semibold shadow-md hover:bg-green-600 transition-all duration-700 ease-in-out hover:scale-110">
+          <button
+            onClick={handleAddToCart}
+            disabled={!user || disable}
+            className="btn px-6 py-3 rounded-full bg-green-500 text-white font-semibold shadow-md hover:bg-green-600 transition-all duration-700 ease-in-out hover:scale-110"
+          >
             Add to Cart
           </button>
         </div>

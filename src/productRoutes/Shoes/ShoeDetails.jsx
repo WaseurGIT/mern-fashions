@@ -1,11 +1,23 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartProvider";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthProvider";
 
 const ShoeDetails = () => {
+  const { user } = useContext(AuthContext);
+  const { addToCart } = useContext(CartContext);
+
+  const [disable, setDisable] = useState(false);
+
   const shoe = useLoaderData();
   const navigate = useNavigate();
 
   const handleGoBack = () => {
     navigate(-1);
+  };
+
+  const handleAddToCart = () => {
+    addToCart(shoe);
   };
 
   if (!shoe) {
@@ -52,7 +64,11 @@ const ShoeDetails = () => {
           >
             Back
           </button>
-          <button className="btn px-6 py-3 rounded-full bg-green-500 text-white font-semibold shadow-md hover:bg-green-600 transition-all duration-700 ease-in-out hover:scale-110">
+          <button
+            onClick={handleAddToCart}
+            disabled={!user || disable}
+            className="btn px-6 py-3 rounded-full bg-green-500 text-white font-semibold shadow-md hover:bg-green-600 transition-all duration-700 ease-in-out hover:scale-110"
+          >
             Add to Cart
           </button>
         </div>

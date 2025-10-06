@@ -11,6 +11,10 @@ import AuthProvider from "./context/AuthProvider.jsx";
 import BottleDetails from "./productRoutes/Bottles/BottleDetails.jsx";
 import ShoeDetails from "./productRoutes/Shoes/ShoeDetails.jsx";
 import BagDetails from "./productRoutes/Bags/BagDetails.jsx";
+import ThemeProvider from "./context/ThemeProvider.jsx";
+import ReviewForm from "./components/ReviewForm/ReviewForm.jsx";
+import { CartProvider } from "./context/CartProvider.jsx";
+// import CartProvider from "./context/CartProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/reviewForm",
+        element: <ReviewForm></ReviewForm>,
       },
       {
         path: "/bottleDetails/:id",
@@ -75,8 +83,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <CartProvider>
+      <AuthProvider>
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </AuthProvider>
+    </CartProvider>
   </StrictMode>
 );

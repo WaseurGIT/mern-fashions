@@ -1,16 +1,28 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartProvider";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthProvider";
 
 const BottleDetails = () => {
+  const { user } = useContext(AuthContext);
+  const { addToCart } = useContext(CartContext);
+
+  const [disable, setDisable] = useState(false);
+
   const bottle = useLoaderData();
   const navigate = useNavigate();
 
-  const handleGoBack = () =>{
-    navigate(-1)
-  }
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   if (!bottle) {
     return <p className="text-center text-gray-500 mt-10">Bottle not found</p>;
   }
+
+  const handleAddToCart = () => {
+    addToCart(bottle);
+  };
 
   const { name, image, price, rating, features, description } = bottle;
 
@@ -52,7 +64,11 @@ const BottleDetails = () => {
           >
             Back
           </button>
-          <button className="px-6 py-3 rounded-full bg-green-500 text-white font-semibold shadow-md hover:bg-green-600 transition-all duration-700 ease-in-out hover:scale-110">
+          <button
+            onClick={handleAddToCart}
+            disabled={!user || disable}
+            className="px-6 py-3 rounded-full bg-green-500 text-white font-semibold shadow-md hover:bg-green-600 transition-all duration-700 ease-in-out hover:scale-110"
+          >
             Add to Cart
           </button>
         </div>
