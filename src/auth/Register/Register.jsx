@@ -5,6 +5,8 @@ import loginAnimation from "../../../src/assets/LoginLottie.json";
 import { AuthContext } from "../../context/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { updateProfile } from "firebase/auth";
+import avatar from "../../../public/avater.png";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -17,6 +19,7 @@ const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const confirmPassword = form.confirmPassword.value;
@@ -34,15 +37,41 @@ const Register = () => {
       setError("");
     }
 
-    signUp(email, password).then((res) => {
+    signUp(email, password).then(async (res) => {
       const user = res.user;
-      console.log(user);
-      Swal.fire({
-        position: "top-end",
-        title: "Sign Up Successful",
-        showConfirmButton: false,
-        timer: 1500,
+
+      // Set default display pic using Firebase updateProfile
+      await updateProfile(user, {
+        displayName: name,
+        photoURL: avatar,
       });
+
+      // now user.photoURL has the correct value
+      const userData = {
+        name,
+        email,
+        photoURL: user.photoURL,
+        createdAt: new Date().toISOString(),
+      };
+
+      await fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+
+      Swal.fire({
+        toast: true, // enables toast mode
+        position: "top-end", // top-right corner
+        icon: "success", // "success", "error", "info", etc.
+        title: "Sign Up Successful", // the text you want to show
+        showConfirmButton: false,
+        timer: 2000, // auto-close after 2 seconds
+        timerProgressBar: true, // optional progress bar
+        background: "#f0f0f0", // optional: change background
+        iconColor: "#4ade80", // optional: change icon color
+      });
+
       form.reset();
       navigate("/");
     });
@@ -57,7 +86,9 @@ const Register = () => {
           </h2>
           <form onSubmit={handleRegister} className="space-y-5">
             <div>
-              <label className="block text-sm font-semibold mb-1">Full Name</label>
+              <label className="block text-sm font-semibold mb-1">
+                Full Name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -77,7 +108,9 @@ const Register = () => {
               />
             </div>
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700">Password</label>
+              <label className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
@@ -94,7 +127,9 @@ const Register = () => {
               </button>
             </div>
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700">Confirm Password</label>
+              <label className="block text-sm font-medium text-gray-700">
+                Confirm Password
+              </label>
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
@@ -129,13 +164,20 @@ const Register = () => {
           </form>
           <p className="text-sm text-center mt-6 text-gray-600">
             Already have an account?{" "}
-            <Link to="/login" className="text-purple-600 font-semibold hover:underline">
+            <Link
+              to="/login"
+              className="text-purple-600 font-semibold hover:underline"
+            >
               Login
             </Link>
           </p>
         </div>
         <div className="hidden md:flex w-1/2 items-center justify-center">
-          <Lottie animationData={loginAnimation} loop={true} className="w-full h-full" />
+          <Lottie
+            animationData={loginAnimation}
+            loop={true}
+            className="w-full h-full"
+          />
         </div>
       </div>
     </div>

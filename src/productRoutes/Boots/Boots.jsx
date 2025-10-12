@@ -6,7 +6,7 @@ const Boots = () => {
   const [boots, setBoots] = useState([]);
 
   useEffect(() => {
-    fetch("/products.json")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => {
         const bootItems = data.filter((item) => item.category === "Boots");

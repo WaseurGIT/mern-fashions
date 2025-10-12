@@ -11,6 +11,7 @@ import AuthProvider from "./context/AuthProvider.jsx";
 import BottleDetails from "./productRoutes/Bottles/BottleDetails.jsx";
 import ShoeDetails from "./productRoutes/Shoes/ShoeDetails.jsx";
 import BagDetails from "./productRoutes/Bags/BagDetails.jsx";
+import BootDetails from "./productRoutes/Boots/BootDetails.jsx"
 import ThemeProvider from "./context/ThemeProvider.jsx";
 import ReviewForm from "./components/ReviewForm/ReviewForm.jsx";
 import { CartProvider } from "./context/CartProvider.jsx";
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
         path: "/bottleDetails/:id",
         element: <BottleDetails />,
         loader: async ({ params }) => {
-          const res = await fetch("/products.json");
+          const res = await fetch("http://localhost:5000/products");
           const data = await res.json();
           const bottle = data.find((item) => item.id === parseInt(params.id));
           return bottle;
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
         path: "/shoeDetails/:id",
         element: <ShoeDetails></ShoeDetails>,
         loader: async ({ params }) => {
-          const res = await fetch("/products.json");
+          const res = await fetch("http://localhost:5000/products");
           const data = await res.json();
           const shoe = data.find((item) => item.id === parseInt(params.id));
           return shoe;
@@ -61,7 +62,7 @@ const router = createBrowserRouter([
         path: "/bagDetails/:id",
         element: <BagDetails></BagDetails>,
         loader: async ({ params }) => {
-          const res = await fetch("/products.json");
+          const res = await fetch("http://localhost:5000/products");
           const data = await res.json();
           const bag = data.find((item) => item.id === parseInt(params.id));
           return bag;
@@ -69,9 +70,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/bootDetails/:id",
-        element: <BottleDetails></BottleDetails>,
+        element: <BootDetails></BootDetails>,
         loader: async ({ params }) => {
-          const res = await fetch("/products.json");
+          const res = await fetch("http://localhost:5000/products");
           const data = await res.json();
           const boot = data.find((item) => item.id === parseInt(params.id));
           return boot;

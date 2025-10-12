@@ -10,28 +10,82 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const { loginUser, googleSignIn } = useContext(AuthContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    loginUser(email, password).then((res) => {
+    await loginUser(email, password).then(async (res) => {
       const user = res.user;
+      const date = new Date();
+      const bangladeshTime = new Date(date.getTime() + 6 * 60 * 60 * 1000);
+      const lastLoggedIn = bangladeshTime.toISOString();
       console.log(user);
+
+      await fetch(`http://localhost:5000/users/${email}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ lastLoggedIn }),
+      });
+
       Swal.fire({
-        position: "top-end",
-        title: "Login Successful 🎉",
+        toast: true, // enables toast mode
+        position: "top-end", // top-right corner
+        icon: "success", // "success", "error", "info", etc.
+        title: "Login Successful", // the text you want to show
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2000, // auto-close after 2 seconds
+        timerProgressBar: true, // optional progress bar
+        background: "#f0f0f0", // optional: change background
+        iconColor: "#4ade80", // optional: change icon color
       });
     });
     form.reset();
     navigate("/");
   };
 
-  const handleGoogleSignIn = () => {
-    googleSignIn();
+  const handleGoogleSignIn = async () => {
+    try {
+      const res = await googleSignIn();
+      const email = res.user.email;
+
+      const date = new Date();
+      const bangladeshTime = new Date(date.getTime() + 6 * 60 * 60 * 1000);
+      const lastLoggedIn = bangladeshTime.toISOString();
+
+      const response = await fetch(`http://localhost:5000/users/${email}`, {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ lastLoggedIn }),
+      });
+
+      const data = await response.json();
+      console.log("Database response:", data);
+
+      Swal.fire({
+        toast: true, // enables toast mode
+        position: "top-end", // top-right corner
+        icon: "success", // "success", "error", "info", etc.
+        title: "Login Successful", // the text you want to show
+        showConfirmButton: false,
+        timer: 2000, // auto-close after 2 seconds
+        timerProgressBar: true, // optional progress bar
+        background: "#f0f0f0", // optional: change background
+        iconColor: "#4ade80", // optional: change icon color
+      });
+
+      navigate("/");
+    } catch (error) {
+      console.error("Google Sign-In failed:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed",
+        text: error.message || "Something went wrong. Please try again.",
+      });
+    }
   };
 
   return (
@@ -78,7 +132,7 @@ const LoginForm = () => {
             <button
               type="button"
               onClick={handleGoogleSignIn}
-              className="w-full flex items-center justify-center gap-2 py-3 border border-gray-300 rounded-lg font-semibold bg-white shadow hover:bg-gray-50 transition duration-300"
+              className="btn w-full flex items-center justify-center gap-2 py-3 border border-gray-300 rounded-lg font-semibold bg-white shadow hover:bg-gray-50 transition duration-300"
             >
               <FcGoogle className="text-2xl" /> Continue with Google
             </button>

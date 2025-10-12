@@ -6,7 +6,7 @@ const Shoes = () => {
   const [shoes, setShoes] = useState([]);
 
   useEffect(() => {
-    fetch("/products.json")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => {
         const shoeItems = data.filter((item) => item.category === "Sneakers");

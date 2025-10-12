@@ -8,6 +8,8 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { MdDelete, MdLogout, MdOutlineWbSunny } from "react-icons/md";
 import { ThemeContext } from "../../context/ThemeProvider";
 import { CartContext } from "../../context/CartProvider";
+import Swal from "sweetalert2";
+import avatar from "../../../public/avater.png";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -18,6 +20,17 @@ const NavBar = () => {
 
   const handleLogOut = () => {
     logOut();
+    Swal.fire({
+      toast: true, // enables toast mode
+      position: "top-end", // top-right corner
+      icon: "success", // "success", "error", "info", etc.
+      title: "Successfully Logged Out", // the text you want to show
+      showConfirmButton: false,
+      timer: 2000, // auto-close after 2 seconds
+      timerProgressBar: true, // optional progress bar
+      background: "#f0f0f0", // optional: change background
+      iconColor: "#4ade80", // optional: change icon color
+    });
   };
 
   const links = (
@@ -184,7 +197,11 @@ const NavBar = () => {
       <div className="ml-2">
         {user && (
           <div className="flex items-center gap-2">
-            <FaRegCircleUser className="text-2xl text-green-500" />
+            {/* show user profile pic */}
+            <img src={avatar} className="w-10 h-10 rounded-full" alt="" />
+            <h1 className="text-blue-500 font-semibold w-26">
+              Hi, {user.displayName ? user.displayName.split(" ")[0] : "User"}
+            </h1>
             <MdLogout
               onClick={handleLogOut}
               className="text-2xl text-red-500 cursor-pointer"
