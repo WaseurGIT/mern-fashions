@@ -15,12 +15,14 @@ import BootDetails from "./productRoutes/Boots/BootDetails.jsx"
 import ThemeProvider from "./context/ThemeProvider.jsx";
 import ReviewForm from "./components/ReviewForm/ReviewForm.jsx";
 import { CartProvider } from "./context/CartProvider.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 // import CartProvider from "./context/CartProvider.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

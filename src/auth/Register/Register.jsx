@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
-import avatar from "../../../public/avater.png";
+import avatar from "/avater.png";
 
 const Register = () => {
   const navigate = useNavigate();

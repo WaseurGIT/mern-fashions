@@ -9,7 +9,7 @@ import { MdDelete, MdLogout, MdOutlineWbSunny } from "react-icons/md";
 import { ThemeContext } from "../../context/ThemeProvider";
 import { CartContext } from "../../context/CartProvider";
 import Swal from "sweetalert2";
-import avatar from "../../../public/avater.png";
+import avatar from "/avater.png";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -50,9 +50,9 @@ const NavBar = () => {
       <li className="transition-all duration-700 ease-in-out hover:scale-110">
         <a href="#socks">Socks</a>
       </li>
-      <li className="transition-all duration-700 ease-in-out hover:scale-110">
+      {/* <li className="transition-all duration-700 ease-in-out hover:scale-110">
         <NavLink to="/reviewForm">Review</NavLink>
-      </li>
+      </li> */}
       <li className="transition-all duration-700 ease-in-out hover:scale-110">
         <NavLink to="/login">Login</NavLink>
       </li>
