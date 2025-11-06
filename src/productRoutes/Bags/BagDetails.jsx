@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartProvider";
 import { AuthContext } from "../../context/AuthProvider";
+import axios from "axios";
 
 const BagDetails = () => {
   const { addToCart } = useContext(CartContext);
@@ -12,8 +13,24 @@ const BagDetails = () => {
   const bag = useLoaderData();
   const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    addToCart(bag);
+  const handleAddToCart = async () => {
+    if (!user) return; // optionally show a toast
+
+    const newItem = {
+      // IMPORTANT: use "email" to match server's query field
+      email: user.email,
+      ...bag,
+    };
+
+    try {
+      setDisable(true);
+      await addToCart(newItem); // addToCart updates state
+      console.log("Item added to cart!");
+    } catch (err) {
+      console.error("Failed to add to cart:", err);
+    } finally {
+      setDisable(false);
+    }
   };
 
   const handleGoBack = () => {

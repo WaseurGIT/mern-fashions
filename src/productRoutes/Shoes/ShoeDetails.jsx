@@ -16,8 +16,24 @@ const ShoeDetails = () => {
     navigate(-1);
   };
 
-  const handleAddToCart = () => {
-    addToCart(shoe);
+  const handleAddToCart = async () => {
+    if (!user) return; // optionally show a toast
+
+    const newItem = {
+      // IMPORTANT: use "email" to match server's query field
+      email: user.email,
+      ...shoe,
+    };
+
+    try {
+      setDisable(true);
+      await addToCart(newItem); // addToCart updates state
+      console.log("Item added to cart!");
+    } catch (err) {
+      console.error("Failed to add to cart:", err);
+    } finally {
+      setDisable(false);
+    }
   };
 
   if (!shoe) {

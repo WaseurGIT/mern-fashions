@@ -1,22 +1,28 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
 import { FaMoon, FaRegHeart, FaSun } from "react-icons/fa";
 import "./Navbar.css";
 import { AuthContext } from "../../context/AuthProvider";
-import { FaRegCircleUser } from "react-icons/fa6";
-import { MdDelete, MdLogout, MdOutlineWbSunny } from "react-icons/md";
+import { MdDelete, MdLogout } from "react-icons/md";
 import { ThemeContext } from "../../context/ThemeProvider";
 import { CartContext } from "../../context/CartProvider";
 import Swal from "sweetalert2";
 import avatar from "/avater.png";
 
 const NavBar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, setLoading } = useContext(AuthContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const { cartItems, cartCount, removeFromCart } = useContext(CartContext);
+  const { cartItems, cartCount, removeFromCart, setCartItems, fetchCartItems } =
+    useContext(CartContext);
 
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (user?.email) {
+      fetchCartItems(user.email); // fetchCartItems is from CartContext
+    }
+  }, [user]);
 
   const handleLogOut = () => {
     logOut();
@@ -138,9 +144,9 @@ const NavBar = () => {
                 </p>
               ) : (
                 <ul className="space-y-3 max-h-96 overflow-y-auto pr-1">
-                  {cartItems.map((item, idx) => (
+                  {cartItems.map((item) => (
                     <li
-                      key={idx}
+                      key={String(item._id)} // use _id as key
                       className="flex items-center gap-3 bg-gray-50 hover:bg-gray-100 p-2 rounded-lg transition"
                     >
                       <img
@@ -155,7 +161,7 @@ const NavBar = () => {
                         <p className="text-xs text-gray-500">${item.price}</p>
                       </div>
                       <button
-                        onClick={() => removeFromCart(item.id)}
+                        onClick={() => removeFromCart(item._id)}
                         className="text-red-500 hover:text-red-700 text-sm font-semibold"
                       >
                         <MdDelete className="text-xl" />
@@ -163,28 +169,6 @@ const NavBar = () => {
                     </li>
                   ))}
                 </ul>
-              )}
-
-              {/* Footer */}
-              {cartItems.length > 0 && (
-                <div className="mt-4 border-t pt-3">
-                  <div className="flex justify-between mb-3 text-gray-700 font-medium">
-                    <span>Total:</span>
-                    <span>
-                      $
-                      {cartItems
-                        .reduce((sum, item) => sum + Number(item.price), 0)
-                        .toFixed(2)}
-                    </span>
-                  </div>
-                  {/* <NavLink
-                    to="/cart"
-                    className="btn btn-sm bg-purple-600 hover:bg-purple-700 w-full text-white rounded-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Go to Cart
-                  </NavLink> */}
-                </div>
               )}
             </div>
           )}
